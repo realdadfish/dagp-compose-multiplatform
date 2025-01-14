@@ -1,4 +1,5 @@
-import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
+import com.android.build.api.variant.AndroidComponentsExtension
+import java.util.Locale
 
 plugins {
     alias(libs.plugins.android.application)
@@ -22,12 +23,13 @@ kotlin {
             implementation(compose.components.resources)
             implementation(compose.foundation)
             implementation(compose.material3)
+            implementation(project(":lib"))
         }
     }
 }
 
 android {
-    namespace = "com.example.multiplatform"
+    namespace = "com.example.multiplatform.app"
     compileSdk = 35
 
     defaultConfig {
@@ -50,7 +52,7 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
 }

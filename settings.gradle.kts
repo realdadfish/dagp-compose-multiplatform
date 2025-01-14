@@ -21,4 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "Multiplatform"
 include(":app")
- 
+include(":lib")
